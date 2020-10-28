@@ -39,14 +39,12 @@ $arrayUtils->chunk(int $size, bool $preserveKeys = false) : ArrayUtils;
 
 * `$size`
   * The size of each chunk
-* `$preserveKeys` ![](../.gitbook/assets/badge_optional%20%282%29.svg) 
+* `$preserveKeys` ![](../.gitbook/assets/badge_optional.svg) 
   * When set to **`TRUE`** keys will be preserved. Default is **`FALSE`** which will reindex the chunk numerically
 
 ### Return value
 
-*  Returns a multidimensional numerically indexed array, starting with zero, with each dimension containing `size` elements.
-
-
+* Returns a multidimensional numerically indexed array, starting with zero, with each dimension containing `size` elements.
 
 ## Polymorphism
 

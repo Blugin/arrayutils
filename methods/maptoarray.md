@@ -41,8 +41,6 @@ ArrayUtils::mapToArray(iterable $iterables) : array
 
 * A new array containing elements converted to an array.
 
-
-
 ## Polymorphism
 
 This method not have polymorphic element

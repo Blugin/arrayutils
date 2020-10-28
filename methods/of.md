@@ -31,15 +31,11 @@ ArrayUtils::of(mixed ...$elements) : ArrayUtils
 
 * A new `ArrayUtils` instance.
 
-
-
 ## Polymorphism
 
 This method not have polymorphic element
 
 ## References
 
-{% embed url="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global\_Objects/Array/of" %}
-
-
+{% embed url="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global\_Objects/Array/of" caption="" %}
 

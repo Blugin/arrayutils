@@ -12,20 +12,12 @@ The method types are largely divided into two by return values
 >
 > > ex\) `join()`, `first()`, `sum()`, `reduce()`...
 
-
-
 ### ⚡Chaining method
 
 > > For a detailed description of the method chaining method, [click here](https://en.wikipedia.org/wiki/Method_chaining)
-
+>
 > This chaining-method returns an `ArrayUtils` instance.  
 > Because of this, allowing the calls to be chained together in a single statement without requiring variables to store the intermediate results.
-
-
-
-
-
-
 
 ## \#⃣Method polymorphism
 
@@ -55,8 +47,6 @@ var_export((array) $arr);
 {% endtab %}
 {% endtabs %}
 
-
-
 ### ⚡ Magic prefix`"As"` <a id="as-prefix"></a>
 
 Prefixing "As" to the chaining method for returns a pure array.
@@ -81,8 +71,6 @@ var_export((array) $arr->reverse());
 {% endtab %}
 {% endtabs %}
 
-
-
 {% hint style="success" %}
 You can use two functions at once.
 
@@ -91,6 +79,4 @@ var_export(ArrayUtils::reverseFromAs([1,2,3,4,5]));
 //array (0 => 5, 1 => 4, 2 => 3, 3 => 2, 4 => 1)
 ```
 {% endhint %}
-
-
 

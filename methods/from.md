@@ -29,14 +29,12 @@ ArrayUtils::from(iterable $iterable, ?callable $mapFn = null) : ArrayUtils
 
 * `$iterable` 
   * Iterable object to convert to an array.
-* `$mapFn` ![](../.gitbook/assets/badge_optional%20%282%29.svg) 
+* `$mapFn`  ![](../.gitbook/assets/badge_optional.svg) 
   * Map function to call on every element of the array.
 
 ### Return value
 
 * A new `ArrayUtils` instance.
-
-
 
 ## Polymorphism
 
@@ -44,7 +42,5 @@ This method not have polymorphic element
 
 ## References
 
-{% embed url="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global\_Objects/Array/from" %}
-
-
+{% embed url="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global\_Objects/Array/from" caption="" %}
 
