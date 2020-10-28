@@ -33,7 +33,9 @@ ArrayUtils::of(mixed ...$elements) : ArrayUtils
 
 ## Polymorphism
 
+{% hint style="warning" %}
 This method not have polymorphic element
+{% endhint %}
 
 ## References
 

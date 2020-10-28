@@ -38,7 +38,9 @@ ArrayUtils::from(iterable $iterable, ?callable $mapFn = null) : ArrayUtils
 
 ## Polymorphism
 
+{% hint style="warning" %}
 This method not have polymorphic element
+{% endhint %}
 
 ## References
 

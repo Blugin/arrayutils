@@ -49,10 +49,6 @@ $arrayUtils->chunk(int $size, bool $preserveKeys = false) : ArrayUtils;
 ## Polymorphism
 
 ```php
-$arrayUtils->chunk(int $size, bool $preserveKeys = false) : ArrayUtils;
-```
-
-```php
 $arrayUtils->chunkAs(int $size, bool $preserveKeys = false) : array;
 ```
 

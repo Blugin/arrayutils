@@ -43,7 +43,9 @@ ArrayUtils::mapToArray(iterable $iterables) : array
 
 ## Polymorphism
 
+{% hint style="warning" %}
 This method not have polymorphic element
+{% endhint %}
 
 ## References
 
