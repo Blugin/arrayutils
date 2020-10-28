@@ -1,21 +1,38 @@
 # Introduction
 
+
+
 ![](.gitbook/assets/title.svg)
+
+![](.gitbook/assets/virions-min-2-.svg)
 
 ## \#⃣What is ArrayUtils? <a id="importing"></a>
 
+## What is ArrayUtils?
+
 ArrayUtils is a library that provides a great way to manipulate arrays.
+
+ArrayUtils is a library that provides a great way to manipulate arrays  
+It wraps the array in an object and provides a variety of methods.   
+As it is itself an `ArrayObject`, it can be used like an array.
 
 It wraps the array in an object and provides a variety of methods.   
 As it is itself an `ArrayObject`, it can be used like an array.
 
+PHP's array functions are painful for developers. \(like `array_map`, `array_filter`\)  
+In addition, since it is a the `function` breaks every time.   
+I created this library to solve these problems and make code flow like `js-array`
+
 PHP's array functions are painful for developers. \(like `array_map`, `array_filter`\)
+
+## What happens when I use it?
+
+
 
 * Array first or callback function first...  
 * Return value or reference a variable...  
 
-In addition, since it is a `function`, the code breaks every time.  
-I created this library to solve these problems and make code flow like `js-array`.
+
 
 ## \#⃣What happens when I use it? <a id="importing"></a>
 
