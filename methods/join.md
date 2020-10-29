@@ -2,7 +2,7 @@
 description: The chunk() method split an array into chunks
 ---
 
-# ArrayUtils-&gt;chunk\(\)
+# ArrayUtils-&gt;join\(\)
 
 {% code title="Example.php" %}
 ```php

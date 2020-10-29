@@ -2,7 +2,7 @@
 description: The chunk() method split an array into chunks
 ---
 
-# ArrayUtils-&gt;chunk\(\)
+# ArrayUtils-&gt;diff\(\)
 
 {% code title="Example.php" %}
 ```php
