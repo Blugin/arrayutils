@@ -7,7 +7,7 @@
     "-search",
     "-sharing",
     "theme-simple@git+https://github.com/plugins-zander/gitbook-plugin-theme-simple.git",
-    "edit-link@git+https://github.com/plugins-zander/gitbook-plugin-edit-link.git",
+    "edit-link@git+https://github.com/plugins-zander/gitbook-plugin-edit-link.git"
   ],
   "pluginsConfig": {
     "edit-link": {
