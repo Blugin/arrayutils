@@ -4,8 +4,6 @@
 
 ![](.gitbook/assets/title.svg)
 
-![](.gitbook/assets/virions-min-2-.svg)
-
 ## \#⃣What is ArrayUtils? <a id="importing"></a>
 
 ## What is ArrayUtils?
@@ -47,8 +45,8 @@ Also, if you Using the `array-function` added in PHP 7.4, you can write more nea
 {% tabs %}
 {% tab title="Pure PHP" %}
 ```php
-$playerFiles = scandir(Server::getInstance()->getDataPath() . "players/"
-$onlinePlayers = Server::getInstance()->getOnlinePlayers();"
+$playerFiles = scandir(Server::getInstance()->getDataPath() . "players/";
+$onlinePlayers = Server::getInstance()->getOnlinePlayers();
 
 $onlineNames = array_column(
     array_map(
