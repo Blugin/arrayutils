@@ -2,9 +2,7 @@
 
 ![](.gitbook/assets/title.svg)
 
-## \#⃣What is ArrayUtils? <a id="importing"></a>
-
-## What is ArrayUtils?
+## \#⃣What is ArrayUtils?
 
 ArrayUtils is a library that provides a great way to manipulate arrays.
 
