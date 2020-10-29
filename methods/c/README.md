@@ -80,7 +80,7 @@ var_export(ArrayUtils::reverseFromAs([1,2,3,4,5]));
 
 {% page-ref page="slice.md" %}
 
-{% page-ref page="splice.md" %}
+{% page-ref page="../g/splice.md" %}
 
 {% page-ref page="sort/" %}
 
