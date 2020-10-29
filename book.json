@@ -1,20 +1,13 @@
 {
   "title": "ArrayUtils",
   "author": "PresentKim",
-  "gitbook": "3.2.3",
+  "gitbook": "4.0.0-alpha.6",
   "plugins": [
     "-lunr",
     "-search",
     "-sharing",
-    "-codetabs",
-    "-tabs",
     "theme-simple@git+https://github.com/plugins-zander/gitbook-plugin-theme-simple.git",
-    "search-pro@git+https://github.com/plugins-zander/gitbook-plugin-search-pro.git",
-    "splitter@git+https://github.com/plugins-zander/gitbook-plugin-splitter.git",
     "edit-link@git+https://github.com/plugins-zander/gitbook-plugin-edit-link.git",
-    "chapter-fold@git+https://github.com/plugins-zander/gitbook-plugin-chapter-fold.git",
-    "copy-code-button@git+https://github.com/plugins-zander/gitbook-plugin-copy-code-button.git",
-    "codetabs@https://github.com/GitbookIO/plugin-codetabs.git"
   ],
   "pluginsConfig": {
     "edit-link": {
