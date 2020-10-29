@@ -67,11 +67,9 @@
   * [⚡ Prefix - From](prefixs/from.md)
   * [⚡ Prefix - As](prefixs/as.md)
 
-## methods <a id="m"></a>
-
----
+## links
 
 * [📌Github repo](https://github.com/PresentKim/arrayutils)
-* [📌Poggit project](https://poggit.pmmp.io/ci/PresentKim/arrayutils/~)
 * [📌Packagist project](https://packagist.org/packages/presentkim/arrayutils)
+* [📌Poggit project](https://poggit.pmmp.io/ci/PresentKim/arrayutils/~)
 
