@@ -1,4 +1,4 @@
-# Introduction
+# 🌐 Introduction
 
 ![](.gitbook/assets/title.svg)
 
