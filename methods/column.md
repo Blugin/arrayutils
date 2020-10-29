@@ -1,5 +1,5 @@
 ---
-description: The chunk() method split an array into chunks
+description: The column() method split an array into chunks
 ---
 
 # ArrayUtils-&gt;column\(\)
@@ -32,7 +32,7 @@ ArrayUtils::from(range(1, 20))->chunk(4, true);
 ## Syntax
 
 ```php
-$arrayUtils->chunk(int $size, bool $preserveKeys = false) : ArrayUtils;
+$arrayUtils->column(mixed $column_key, mixed $indexKey = null) : ArrayUtils;
 ```
 
 ### Parameter
@@ -49,15 +49,15 @@ $arrayUtils->chunk(int $size, bool $preserveKeys = false) : ArrayUtils;
 ## Polymorphism
 
 ```php
-$arrayUtils->chunkAs(int $size, bool $preserveKeys = false) : array;
+$arrayUtils->columnAs(mixed $column_key, mixed $indexKey = null) : array;
 ```
 
 ```php
-ArrayUtils::chunkFrom(iterable $from, int $size, bool $preserveKeys = false) : ArrayUtils;
+ArrayUtils::columnFrom(iterable $from, mixed $column_key, mixed $indexKey = null) : ArrayUtils;
 ```
 
 ```php
-ArrayUtils::chunkFromAs(iterable $from, int $size, bool $preserveKeys = false) : array;
+ArrayUtils::(iterable $from, mixed $column_key, mixed $indexKey = null) : array;
 ```
 
 ## References

@@ -1,5 +1,5 @@
 ---
-description: The chunk() method split an array into chunks
+description: The diffKey() method split an array into chunks
 ---
 
 # ArrayUtils-&gt;diffKey\(\)
@@ -32,7 +32,7 @@ ArrayUtils::from(range(1, 20))->chunk(4, true);
 ## Syntax
 
 ```php
-$arrayUtils->chunk(int $size, bool $preserveKeys = false) : ArrayUtils;
+$arrayUtils->diffKey(iterable ...$iterables) : ArrayUtils;
 ```
 
 ### Parameter
@@ -49,15 +49,15 @@ $arrayUtils->chunk(int $size, bool $preserveKeys = false) : ArrayUtils;
 ## Polymorphism
 
 ```php
-$arrayUtils->chunkAs(int $size, bool $preserveKeys = false) : array;
+$arrayUtils->diffKeyAs(iterable ...$iterables) : array;
 ```
 
 ```php
-ArrayUtils::chunkFrom(iterable $from, int $size, bool $preserveKeys = false) : ArrayUtils;
+ArrayUtils::diffKeyFrom(iterable $from, iterable ...$iterables) : ArrayUtils;
 ```
 
 ```php
-ArrayUtils::chunkFromAs(iterable $from, int $size, bool $preserveKeys = false) : array;
+ArrayUtils::diffKeyFromAs(iterable $from, iterable ...$iterables) : array;
 ```
 
 ## References
