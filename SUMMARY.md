@@ -10,6 +10,7 @@
 * [ArrayUtils::from\(\)](methods/from.md)
 * [ArrayUtils::of\(\)](methods/of.md)
 * [ArrayUtils::mapToArray\(\)](methods/maptoarray.md)
+* [ArrayUtils-&gt;chunk\(\)](methods/chunk.md)
 * [ArrayUtils-&gt;column\(\)](methods/column.md)
 * [ArrayUtils-&gt;combine\(\)](methods/combine.md)
 * [ArrayUtils-&gt;concat\(\)](methods/concat.md)
