@@ -1,5 +1,5 @@
 ---
-description: 'The diffAssoc() method all similar to @see __diff(), but this applies to keys'
+description: 'The diffAssoc() method all similar to diff(), but this applies to keys'
 ---
 
 # ArrayUtils-&gt;diffKey\(\)
@@ -12,7 +12,7 @@ $arrayUtils = ArrayUtils::from(["first" => 1, "second" => 2, "third" => 3]);
 
 //General array comparison
 $arrayUtils->diffKey(["first" => 404, "second" => 404]);
-//["third" => 3]
+// expected output: ["third" => 3]
 ```
 {% endcode %}
 

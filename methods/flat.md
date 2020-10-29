@@ -1,31 +1,28 @@
 ---
-description: The flat() method split an array into chunks
+description: >-
+  The flat() method creates a new array with all sub-array elements concatenated
+  into it recursively up to the specified depth.
 ---
 
 # ArrayUtils-&gt;flat\(\)
 
 {% code title="Example.php" %}
 ```php
-<?php
-use kim\present\utils\arrays\ArrayUtils;
+<?php use kim\present\utils\arrays\ArrayUtils;
 
-ArrayUtils::from(range(1, 20))->chunk(4);
-//[
-//  [ 1,  2,  3,  4],
-//  [ 5,  6,  7,  8],
-//  [ 9, 10, 11, 12],
-//  [13, 14, 15, 16],
-//  [17, 18, 19, 20]
-//]
+$arrayUtils = ArrayUtils::from([
+    [1, 2, 3],
+    [[4, 5, 6], [7, 8, 9]],
+    10
+]);
 
-ArrayUtils::from(range(1, 20))->chunk(4, true);
-//[
-//  [ 0 =>  1,  1 =>  2,  2 =>  3,  3 =>  4],
-//  [ 4 =>  5,  5 =>  6,  6 =>  7,  7 =>  8],
-//  [ 8 =>  9,  9 => 10, 10 => 11, 11 => 12],
-//  [12 => 13, 13 => 14, 14 => 15, 15 => 16],
-//  [16 => 17, 17 => 18, 18 => 19, 19 => 20]
-//]
+//To flat single level array
+$arrayUtils->flat();
+// expected output: [1, 2, 3, [4, 5, 6], [7, 8, 9], 10]
+
+//To flat two level array
+$arrayUtils->flat(2);
+// expected output: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 ```
 {% endcode %}
 
@@ -37,14 +34,12 @@ $arrayUtils->flat(int $dept = 1) : ArrayUtils;
 
 ### Parameter
 
-* `$size`
-  * The size of each chunk
-* `$preserveKeys` ![](../.gitbook/assets/badge_optional.svg) 
-  * When set to **`TRUE`** keys will be preserved. Default is **`FALSE`** which will reindex the chunk numerically
+* `$dept` ![](../.gitbook/assets/badge_optional.svg) 
+  * The depth level that should be flattened. Default is `1`.
 
 ### Return value
 
-* Returns a multidimensional numerically indexed array, starting with zero, with each dimension containing `size` elements.
+* A new array with the sub-array elements concatenated into it.
 
 ## Polymorphism
 
@@ -62,5 +57,7 @@ ArrayUtils::flatFromAs(iterable $from, int $dept = 1) : array;
 
 ## References
 
-[https://www.php.net/manual/en/function.array-chunk](https://www.php.net/manual/en/function.array-chunk)
+{% embed url="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global\_Objects/Array/flat" %}
+
+
 

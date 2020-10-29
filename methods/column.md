@@ -17,22 +17,22 @@ $arrayUtils = ArrayUtils::from([
 
 // Use "any" value in internal array as value of array
 $arrayUtils->column("any");
-//["first", "second", "third"]
+// expected output: ["first", "second", "third"]
 
 
 // Use 2nd value in internal array as value,
 // Use "any" in internal array as key of array
 $arrayUtils->column(1, "any");
-//["first" => 2, "second" => 5, "third" => 8]
+// expected output: ["first" => 2, "second" => 5, "third" => 8]
 
 
 // Use value in internal array as value,
 // Use "any" in internal array as key of array
 $arrayUtils->column(null, "any");
-//[
-//  "first"  => ["any" => "first",  1, 2, 3],
-//  "second" => ["any" => "second", 4, 5, 6],
-//  "third"  => ["any" => "third",  7, 8, 9]
+// expected output: [
+//   "first"  => ["any" => "first",  1, 2, 3],
+//   "second" => ["any" => "second", 4, 5, 6],
+//   "third"  => ["any" => "third",  7, 8, 9]
 //]
 ```
 {% endcode %}

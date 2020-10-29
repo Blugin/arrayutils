@@ -1,31 +1,27 @@
 ---
-description: The flatMap() method split an array into chunks
+description: >-
+  The flatMap() method create a new array formed by applying function and then
+  flattening the result by one level
 ---
 
 # ArrayUtils-&gt;flatMap\(\)
 
 {% code title="Example.php" %}
 ```php
-<?php
-use kim\present\utils\arrays\ArrayUtils;
+<?php use kim\present\utils\arrays\ArrayUtils;
 
-ArrayUtils::from(range(1, 20))->chunk(4);
-//[
-//  [ 1,  2,  3,  4],
-//  [ 5,  6,  7,  8],
-//  [ 9, 10, 11, 12],
-//  [13, 14, 15, 16],
-//  [17, 18, 19, 20]
-//]
+$arrayUtils = ArrayUtils::from([-3, 2, -4, 5, 9]);
 
-ArrayUtils::from(range(1, 20))->chunk(4, true);
-//[
-//  [ 0 =>  1,  1 =>  2,  2 =>  3,  3 =>  4],
-//  [ 4 =>  5,  5 =>  6,  6 =>  7,  7 =>  8],
-//  [ 8 =>  9,  9 => 10, 10 => 11, 11 => 12],
-//  [12 => 13, 13 => 14, 14 => 15, 15 => 16],
-//  [16 => 17, 17 => 18, 18 => 19, 19 => 20]
-//]
+//Element duplication
+$arrayUtils->flatMap(function($num){ return [$num, $num]; });
+// expected output: [-3, -3, 2, 2, -4, -4, 5, 5, 9, 9]
+
+//Remove negative and split the odd numbers into an even number and a 1
+$arrayUtils->flatMap(function($num){
+  if($num< 0)       return [];
+  if($num % 2 == 0) return [$num];
+  else              return [$num - 1, 1]; });
+// expected output: [2, 4, 1, 8, 1]
 ```
 {% endcode %}
 
@@ -37,14 +33,19 @@ $arrayUtils->flatMap(callable $callback) : ArrayUtils;
 
 ### Parameter
 
-* `$size`
-  * The size of each chunk
-* `$preserveKeys` ![](../.gitbook/assets/badge_optional.svg) 
-  * When set to **`TRUE`** keys will be preserved. Default is **`FALSE`** which will reindex the chunk numerically
+* `$callback`
+
+  > A function that produces an element of the new Array, taking three arguments:
+  >
+  > * `$value` The current element being processed in the array.
+  > * `$key` The index of the current element being processed in the array.
+  > * `$array`   The array `every` was called upon.
+
+### 
 
 ### Return value
 
-* Returns a multidimensional numerically indexed array, starting with zero, with each dimension containing `size` elements.
+* A new array with each element being the result of the callback function and flattened to a depth of 1.
 
 ## Polymorphism
 
@@ -62,5 +63,7 @@ ArrayUtils::flatMapFromAs(iterable $from, callable $callback) : array;
 
 ## References
 
-[https://www.php.net/manual/en/function.array-chunk](https://www.php.net/manual/en/function.array-chunk)
+{% embed url="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global\_Objects/Array/flatMap" %}
+
+
 

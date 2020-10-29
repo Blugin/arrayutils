@@ -14,7 +14,7 @@ $arrayUtils = ArrayUtils::from(["first", "second", "third"]);
 
 //General array comparison
 $arrayUtils->diff(["first", "4th"]);
-//["second", "third"]
+// expected output: ["second", "third"]
 ```
 {% endcode %}
 

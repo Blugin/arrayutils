@@ -1,38 +1,25 @@
 ---
-description: The chunk() method split an array into chunks
+description: 'The findIndex() method all similar to find(), but return index'
 ---
 
 # ArrayUtils-&gt;findIndex\(\)
 
 {% code title="Example.php" %}
 ```php
-<?php
-use kim\present\utils\arrays\ArrayUtils;
+<?php use kim\present\utils\arrays\ArrayUtils;
 
-ArrayUtils::from(range(1, 20))->chunk(4);
-//[
-//  [ 1,  2,  3,  4],
-//  [ 5,  6,  7,  8],
-//  [ 9, 10, 11, 12],
-//  [13, 14, 15, 16],
-//  [17, 18, 19, 20]
-//]
+$arrayUtils = ArrayUtils::from(["Apple", "Banana", "Carrot", "Bacon"]);
 
-ArrayUtils::from(range(1, 20))->chunk(4, true);
-//[
-//  [ 0 =>  1,  1 =>  2,  2 =>  3,  3 =>  4],
-//  [ 4 =>  5,  5 =>  6,  6 =>  7,  7 =>  8],
-//  [ 8 =>  9,  9 => 10, 10 => 11, 11 => 12],
-//  [12 => 13, 13 => 14, 14 => 15, 15 => 16],
-//  [16 => 17, 17 => 18, 18 => 19, 19 => 20]
-//]
+//Find value's index ​​starting with B
+$arrayUtils->findIndex(function($name){ return $name[0] === "B"; });
+// expected output: 1
 ```
 {% endcode %}
 
 ## Syntax
 
 ```php
-$arrayUtils->chunk(int $size, bool $preserveKeys = false) : ArrayUtils;
+$arrayUtils->find(callable $callback) : mixed;
 ```
 
 ### Parameter
@@ -44,20 +31,12 @@ $arrayUtils->chunk(int $size, bool $preserveKeys = false) : ArrayUtils;
 
 ### Return value
 
-* Returns a multidimensional numerically indexed array, starting with zero, with each dimension containing `size` elements.
+* The **key** of the **first element** in the array that pass function. Otherwise, `NULL` is returned.
 
 ## Polymorphism
 
 ```php
-$arrayUtils->chunkAs(int $size, bool $preserveKeys = false) : array;
-```
-
-```php
-ArrayUtils::chunkFrom(iterable $from, int $size, bool $preserveKeys = false) : ArrayUtils;
-```
-
-```php
-ArrayUtils::chunkFromAs(iterable $from, int $size, bool $preserveKeys = false) : array;
+ArrayUtils::findFrom(iterable $from, callable $callback) : mixed;
 ```
 
 ## References

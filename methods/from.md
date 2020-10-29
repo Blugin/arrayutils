@@ -11,10 +11,10 @@ description: >-
 <?php use kim\present\utils\arrays\ArrayUtils;
 
 var_export(ArrayUtils::from([3,6,9]));
-//ArrayUtils(array(3, 6, 9))
+// expected output: ArrayUtils(array(3, 6, 9))
 
 var_export(ArrayUtils::from([1, 2, 3], function($x){ return $x + $x; }));
-//ArrayUtils(array(2, 4, 9))
+// expected output: ArrayUtils(array(2, 4, 9))
 ```
 {% endcode %}
 

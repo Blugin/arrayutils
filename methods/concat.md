@@ -12,11 +12,11 @@ $arrayUtils = ArrayUtils::from(["first" => 1, "second" => 2, "third" => 3]);
 
 //Same key values ​​are overwritten
 $arrayUtils->concat(["first" => 0, "4th" => 4]);
-//["first" => 0, "second" => 2, "third" => 3, "4th" => 4]
+// expected output: ["first" => 0, "second" => 2, "third" => 3, "4th" => 4]
 
 //Non-array values ​​can also be combined
 $arrayUtils->concat(4, 5, 6);
-//["first" => 1, "second" => 2, "third" => 3, 4, 5, 6]
+// expected output: ["first" => 1, "second" => 2, "third" => 3, 4, 5, 6]
 ```
 {% endcode %}
 

@@ -15,11 +15,15 @@ $arrayUtils = ArrayUtils::from(["first", "second", "third"]);
 
 //General usage
 $arrayUtils->combine([1, 2, 3]);
-//["first" => 1, "second" => 2, "third" => 3]
+// expected output: ["first" => 1, "second" => 2, "third" => 3]
 
 //Combine itself
 $arrayUtils->combine();
-//["first" => "first", "second" => "second", "third" => "third"]
+// expected output: [
+//   "first" => "first", 
+//   "second" => "second", 
+//   "third" => "third"
+//]
 ```
 {% endcode %}
 

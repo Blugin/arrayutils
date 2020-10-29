@@ -1,31 +1,28 @@
 ---
-description: The fill() method split an array into chunks
+description: >-
+  The fill() method changes all values to a static value, from a start index to
+  an end index
 ---
 
 # ArrayUtils-&gt;fill\(\)
 
 {% code title="Example.php" %}
 ```php
-<?php
-use kim\present\utils\arrays\ArrayUtils;
+<?php use kim\present\utils\arrays\ArrayUtils;
 
-ArrayUtils::from(range(1, 20))->chunk(4);
-//[
-//  [ 1,  2,  3,  4],
-//  [ 5,  6,  7,  8],
-//  [ 9, 10, 11, 12],
-//  [13, 14, 15, 16],
-//  [17, 18, 19, 20]
-//]
+$arrayUtils = ArrayUtils::from(range(1, 10));
 
-ArrayUtils::from(range(1, 20))->chunk(4, true);
-//[
-//  [ 0 =>  1,  1 =>  2,  2 =>  3,  3 =>  4],
-//  [ 4 =>  5,  5 =>  6,  6 =>  7,  7 =>  8],
-//  [ 8 =>  9,  9 => 10, 10 => 11, 11 => 12],
-//  [12 => 13, 13 => 14, 14 => 15, 15 => 16],
-//  [16 => 17, 17 => 18, 18 => 19, 19 => 20]
-//]
+//Full fill with 0
+$arrayUtils->fill(0);
+// expected output: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+
+//Fill with 0 from position 2 until position 4
+$arrayUtils->fill(0, 2, 4);
+// expected output: [1, 2, 0, 0, 5, 6, 7, 8, 9, 10]
+
+//Fill with 0 from position 4 until end
+$arrayUtils->fill(0, 4);
+// expected output: [1, 2, 3, 4, 0, 0, 0, 0, 0, 0]
 ```
 {% endcode %}
 
@@ -37,14 +34,21 @@ $arrayUtils->fill(mixed $value, int $start = 0, int $end = null) : ArrayUtils;
 
 ### Parameter
 
-* `$size`
-  * The size of each chunk
-* `$preserveKeys` ![](../.gitbook/assets/badge_optional.svg) 
-  * When set to **`TRUE`** keys will be preserved. Default is **`FALSE`** which will reindex the chunk numerically
+* `$value` 
+
+  > Value to fill the array with.
+
+* `$start`![](../.gitbook/assets/badge_optional.svg) 
+
+  > Start index, default `0`.
+
+* `$end` ![](../.gitbook/assets/badge_optional.svg) 
+
+  > End index, default `count($array)`.
 
 ### Return value
 
-* Returns a multidimensional numerically indexed array, starting with zero, with each dimension containing `size` elements.
+* A filled array.
 
 ## Polymorphism
 
@@ -62,5 +66,7 @@ ArrayUtils::fillFromAs(iterable $from, mixed $value, int $start = 0, int $end = 
 
 ## References
 
-[https://www.php.net/manual/en/function.array-chunk](https://www.php.net/manual/en/function.array-chunk)
+{% embed url="https://www.php.net/manual/en/function.array-fill-keys" %}
+
+
 

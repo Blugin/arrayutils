@@ -13,7 +13,7 @@ $arrayUtils = ArrayUtils::from(["a", "a", "a", "b", "c", "c", "d"]);
 
 //General usage
 $arrayUtils->countValues();
-//["a" => 3, "b" => 1, "c" => 2, "d" => 1]
+// expected output: ["a" => 3, "b" => 1, "c" => 2, "d" => 1]
 ```
 {% endcode %}
 

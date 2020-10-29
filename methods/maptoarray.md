@@ -15,12 +15,12 @@ ArrayUtils::mapToArray([
     new ArrayObject([1, 2, 3, 4, 5]),
     new ArrayIterator(["ArrayUtils", "mapToArray"])
 ]));
-//Array(
-//  Array(1),
-//  Array(2, 3),
-//  Array("arrayStart" => 0),
-//  Array(1, 2, 3, 4, 5),
-//  Array("ArrayUtils", "mapToArray")
+// expected output: Array(
+//                      Array(1),
+//                      Array(2, 3),
+//                      Array("arrayStart" => 0),
+//                      Array(1, 2, 3, 4, 5),
+//                      Array("ArrayUtils", "mapToArray")
 //)
 ```
 {% endcode %}

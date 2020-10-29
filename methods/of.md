@@ -11,7 +11,7 @@ description: >-
 <?php use kim\present\utils\arrays\ArrayUtils;
 
 ArrayUtils::of(3,6,9);
-//ArrayUtils(array(3, 6, 9))
+// expected output: ArrayUtils(array(3, 6, 9))
 ```
 {% endcode %}
 

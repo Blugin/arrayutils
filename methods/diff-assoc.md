@@ -1,7 +1,7 @@
 ---
 description: >-
-  The diffAssoc() method all similar to @see __diff(), but this applies with
-  additional index check
+  The diffAssoc() method all similar to diff(), but this applies with additional
+  index check
 ---
 
 # ArrayUtils-&gt;diffAssoc\(\)
@@ -14,7 +14,7 @@ $arrayUtils = ArrayUtils::from(["first" => 1, "second" => 2, "third" => 3]);
 
 //General array comparison
 $arrayUtils->diffAssoc(["first" => 404, "second" => 2]);
-//["first" => 1, "third" => 3]
+// expected output: ["first" => 1, "third" => 3]
 ```
 {% endcode %}
 
