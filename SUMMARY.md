@@ -10,7 +10,7 @@
 * [ArrayUtils::from\(\)](methods/from.md)
 * [ArrayUtils::of\(\)](methods/of.md)
 * [ArrayUtils::mapToArray\(\)](methods/maptoarray.md)
-* [ArrayUtils-&gt;chunk\(\)](methods/arrayutils-greater-than-chunk.md)
+* [ArrayUtils-&gt;chunk\(\)](methods/chunk.md)
 
 ---
 
