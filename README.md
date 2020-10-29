@@ -1,7 +1,5 @@
 # Introduction
 
-
-
 ![](.gitbook/assets/title.svg)
 
 ## \#⃣What is ArrayUtils? <a id="importing"></a>
@@ -10,27 +8,15 @@
 
 ArrayUtils is a library that provides a great way to manipulate arrays.
 
-ArrayUtils is a library that provides a great way to manipulate arrays  
-It wraps the array in an object and provides a variety of methods.   
-As it is itself an `ArrayObject`, it can be used like an array.
+The ~~evil~~ PHP array functions give developers the pain of:
 
-It wraps the array in an object and provides a variety of methods.   
-As it is itself an `ArrayObject`, it can be used like an array.
+* Some functions **requires array first**, but some functions **require array last**...  
+* Some functions **returns result**, but some functions **modify referenced variables**...
+* Code was **line-break** because since it is a the function...
+* Each function has **different parameters to the callback function**...
+* No modern functions using arrays. Such as `reduce`, `some`
 
-PHP's array functions are painful for developers. \(like `array_map`, `array_filter`\)  
-In addition, since it is a the `function` breaks every time.   
 I created this library to solve these problems and make code flow like `js-array`
-
-PHP's array functions are painful for developers. \(like `array_map`, `array_filter`\)
-
-## What happens when I use it?
-
-
-
-* Array first or callback function first...  
-* Return value or reference a variable...  
-
-
 
 ## \#⃣What happens when I use it? <a id="importing"></a>
 
@@ -99,6 +85,4 @@ $playerNames = ArrayUtils::filterFrom($playerFiles, fn(string $fileName) => subs
 ```
 {% endtab %}
 {% endtabs %}
-
-
 
