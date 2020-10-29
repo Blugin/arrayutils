@@ -1,0 +1,17 @@
+{
+  "title": "ArrayUtils",
+  "author": "PresentKim",
+  "output.name": "site",
+  "gitbook": "4.0.0-alpha.6",
+  "root": "./",
+  "styles": {},
+  "plugins": [
+      "highlight",
+      "search",
+      "lunr",
+      "sharing",
+      "fontsettings",
+      "theme-default",
+      "tabs"
+  ]
+}
