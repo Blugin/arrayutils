@@ -1,31 +1,20 @@
 ---
-description: The unshift() method split an array into chunks
+description: >-
+  The unshift() method all similar to push(), but this push elements onto the
+  start of array
 ---
 
 # ArrayUtils-&gt;unshift\(\)
 
 {% code title="Example.php" %}
 ```php
-<?php
-use kim\present\utils\arrays\ArrayUtils;
+<?php use kim\present\utils\arrays\ArrayUtils;
 
-ArrayUtils::from(range(1, 20))->chunk(4);
-//[
-//  [ 1,  2,  3,  4],
-//  [ 5,  6,  7,  8],
-//  [ 9, 10, 11, 12],
-//  [13, 14, 15, 16],
-//  [17, 18, 19, 20]
-//]
+$arrayUtils = ArrayUtils::from(range(1,5));
 
-ArrayUtils::from(range(1, 20))->chunk(4, true);
-//[
-//  [ 0 =>  1,  1 =>  2,  2 =>  3,  3 =>  4],
-//  [ 4 =>  5,  5 =>  6,  6 =>  7,  7 =>  8],
-//  [ 8 =>  9,  9 => 10, 10 => 11, 11 => 12],
-//  [12 => 13, 13 => 14, 14 => 15, 15 => 16],
-//  [16 => 17, 17 => 18, 18 => 19, 19 => 20]
-//]
+//Unshift 0 and 10
+$arrayUtils->unshift(0, 10);
+// expected output: [0, 10, 1, 2, 3, 4, 5]
 ```
 {% endcode %}
 
@@ -37,14 +26,15 @@ $arrayUtils->unshift(mixed ...$values) : ArrayUtils;
 
 ### Parameter
 
-* `$size`
-  * The size of each chunk
-* `$preserveKeys` ![](../.gitbook/assets/badge_optional.svg) 
-  * When set to **`TRUE`** keys will be preserved. Default is **`FALSE`** which will reindex the chunk numerically
+* `$values`
+
+  > A values to unshift into array
+
+### 
 
 ### Return value
 
-* Returns a multidimensional numerically indexed array, starting with zero, with each dimension containing `size` elements.
+* oneself back for method chaining.
 
 ## Polymorphism
 
@@ -62,5 +52,13 @@ ArrayUtils::unshiftFromAs(iterable $from, mixed ...$values) : array;
 
 ## References
 
-[https://www.php.net/manual/en/function.array-chunk](https://www.php.net/manual/en/function.array-chunk)
+{% page-ref page="push.md" %}
+
+{% embed url="https://www.php.net/manual/en/function.array-unshift.php" %}
+
+{% embed url="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global\_Objects/Array/unshift" %}
+
+
+
+
 

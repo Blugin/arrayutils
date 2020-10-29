@@ -1,66 +1,78 @@
 ---
-description: The chunk() method split an array into chunks
+description: >-
+  The reduceRight() method all similar to reduce(), but It works in reverse
+  order.
 ---
 
 # ArrayUtils-&gt;reduceRight\(\)
 
 {% code title="Example.php" %}
 ```php
-<?php
-use kim\present\utils\arrays\ArrayUtils;
+<?php use kim\present\utils\arrays\ArrayUtils;
 
-ArrayUtils::from(range(1, 20))->chunk(4);
-//[
-//  [ 1,  2,  3,  4],
-//  [ 5,  6,  7,  8],
-//  [ 9, 10, 11, 12],
-//  [13, 14, 15, 16],
-//  [17, 18, 19, 20]
-//]
+$arrayUtils = ArrayUtils::from(range(1, 10));
 
-ArrayUtils::from(range(1, 20))->chunk(4, true);
-//[
-//  [ 0 =>  1,  1 =>  2,  2 =>  3,  3 =>  4],
-//  [ 4 =>  5,  5 =>  6,  6 =>  7,  7 =>  8],
-//  [ 8 =>  9,  9 => 10, 10 => 11, 11 => 12],
-//  [12 => 13, 13 => 14, 14 => 15, 15 => 16],
-//  [16 => 17, 17 => 18, 18 => 19, 19 => 20]
-//]
+//This is like a 10 factorial
+$arrayUtils->reduceRight(function($accumulator, $value){ return $accumulator * $value; }, 1);
+// expected output: 3628800
+
+
+
+$arrayUtils->reduceRight(
+    function($accumulator, $value){
+        echo  "$accumulator * $value = " . ($accumulator * $value) . PHP_EOL;
+        return $accumulator * $value; }, 1));
+//echo 1 * 10 = 10
+//echo 10 * 9 = 90
+//echo 90 * 8 = 720
+//echo 720 * 7 = 5040
+//echo 5040 * 6 = 30240
+//echo 30240 * 5 = 151200
+//echo 151200 * 4 = 604800
+//echo 604800 * 3 = 1814400
+//echo 1814400 * 2 = 3628800
+//echo 3628800 * 1 = 3628800
+//expected output: 3628800
 ```
 {% endcode %}
 
 ## Syntax
 
 ```php
-$arrayUtils->chunk(int $size, bool $preserveKeys = false) : ArrayUtils;
+$arrayUtils->reduceRight(callable $callback, mixed $initialValue = null) : mixed;
 ```
 
 ### Parameter
 
-* `$size`
-  * The size of each chunk
-* `$preserveKeys` ![](../.gitbook/assets/badge_optional.svg) 
-  * When set to **`TRUE`** keys will be preserved. Default is **`FALSE`** which will reindex the chunk numerically
+* `$callback`
+
+  > A function that produces an element of the new Array, taking four arguments:
+  >
+  > * `$accumulator`The accumulator accumulates callback's return values. It is the accumulated value previously returned in the last invocation of the callback—or `$initialValue`, if it was supplied \(see below\).
+  > * `$value` The current element being processed in the array.
+  > * `$key` The index of the current element being processed in the array.
+  > * `$array`   The array `every` was called upon.
+
+* `$initialValue` ![](../.gitbook/assets/badge_optional.svg) 
+  * A value to use as the first argument to the first call of the callback.
 
 ### Return value
 
-* Returns a multidimensional numerically indexed array, starting with zero, with each dimension containing `size` elements.
+* The result value.
+
+### 
 
 ## Polymorphism
 
 ```php
-$arrayUtils->chunkAs(int $size, bool $preserveKeys = false) : array;
-```
-
-```php
-ArrayUtils::chunkFrom(iterable $from, int $size, bool $preserveKeys = false) : ArrayUtils;
-```
-
-```php
-ArrayUtils::chunkFromAs(iterable $from, int $size, bool $preserveKeys = false) : array;
+ArrayUtils::reduceRightFrom(iterable $from, callable $callback, mixed $initialValue = null) : mixed;
 ```
 
 ## References
 
-[https://www.php.net/manual/en/function.array-chunk](https://www.php.net/manual/en/function.array-chunk)
+{% page-ref page="reduce.md" %}
+
+{% embed url="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global\_Objects/Array/ReduceRight" %}
+
+
 

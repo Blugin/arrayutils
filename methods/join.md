@@ -1,66 +1,68 @@
 ---
-description: The chunk() method split an array into chunks
+description: The join() method join array elements with a string
 ---
 
 # ArrayUtils-&gt;join\(\)
 
 {% code title="Example.php" %}
 ```php
-<?php
-use kim\present\utils\arrays\ArrayUtils;
+<?php use kim\present\utils\arrays\ArrayUtils;
 
-ArrayUtils::from(range(1, 20))->chunk(4);
-//[
-//  [ 1,  2,  3,  4],
-//  [ 5,  6,  7,  8],
-//  [ 9, 10, 11, 12],
-//  [13, 14, 15, 16],
-//  [17, 18, 19, 20]
-//]
+$arrayUtils = ArrayUtils::from(["Apple", "Banana", "Carrot"]);
 
-ArrayUtils::from(range(1, 20))->chunk(4, true);
-//[
-//  [ 0 =>  1,  1 =>  2,  2 =>  3,  3 =>  4],
-//  [ 4 =>  5,  5 =>  6,  6 =>  7,  7 =>  8],
-//  [ 8 =>  9,  9 => 10, 10 => 11, 11 => 12],
-//  [12 => 13, 13 => 14, 14 => 15, 15 => 16],
-//  [16 => 17, 17 => 18, 18 => 19, 19 => 20]
-//]
+//Joining array with multiple elements
+$arrayUtils->join();         // "Apple,Banana,Carrot"
+$arrayUtils->join(" and ");  // "Apple and Banana and Carrot"
+$arrayUtils->join(" || ");   // "Apple || Banana || Carrot"
+
+//Joining with prefix
+$arrayUtils->join(" and ", "I like ");
+// expected output: "I like  Apple and Banana and Carrot"
+
+//Joining with prefix and suffix
+$arrayUtils->join(" and ", "I like ", " little bit");
+// expected output: "I like Apple and Banana and Carrot little bit"
 ```
 {% endcode %}
 
 ## Syntax
 
 ```php
-$arrayUtils->chunk(int $size, bool $preserveKeys = false) : ArrayUtils;
+$arrayUtils->join(string $glue = ",", string $prefix = "", string $suffix = "") : string;
 ```
 
 ### Parameter
 
-* `$size`
-  * The size of each chunk
-* `$preserveKeys` ![](../.gitbook/assets/badge_optional.svg) 
-  * When set to **`TRUE`** keys will be preserved. Default is **`FALSE`** which will reindex the chunk numerically
+* `$glue` ![](../.gitbook/assets/badge_optional.svg) 
+
+  > The string to separate each pair of adjacent elements.  
+  > Default: `","`
+
+* `$prefix` ![](../.gitbook/assets/badge_optional.svg) 
+
+  > The prefix string.  
+  > Default: `""`\(empty\)
+
+* `$suffix`![](../.gitbook/assets/badge_optional.svg) 
+
+  > The suffix string.  
+  > Default: `""`\(empty\)
 
 ### Return value
 
-* Returns a multidimensional numerically indexed array, starting with zero, with each dimension containing `size` elements.
+* A string with all array elements joined
 
 ## Polymorphism
 
 ```php
-$arrayUtils->chunkAs(int $size, bool $preserveKeys = false) : array;
-```
-
-```php
-ArrayUtils::chunkFrom(iterable $from, int $size, bool $preserveKeys = false) : ArrayUtils;
-```
-
-```php
-ArrayUtils::chunkFromAs(iterable $from, int $size, bool $preserveKeys = false) : array;
+ArrayUtils::joinFrom(iterable $from, string $glue = ",", string $prefix = "", string $suffix = "") : string;
 ```
 
 ## References
 
-[https://www.php.net/manual/en/function.array-chunk](https://www.php.net/manual/en/function.array-chunk)
+{% embed url="https://www.php.net/manual/en/function.implode" %}
+
+{% embed url="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global\_Objects/Array/join" %}
+
+
 

@@ -1,31 +1,23 @@
 ---
-description: The sort() method split an array into chunks
+description: >-
+  The sort() method sort an array by values using a function or default sort
+  function
 ---
 
 # ArrayUtils-&gt;sort\(\)
 
 {% code title="Example.php" %}
 ```php
-<?php
-use kim\present\utils\arrays\ArrayUtils;
+<?php use kim\present\utils\arrays\ArrayUtils;
 
-ArrayUtils::from(range(1, 20))->chunk(4);
-//[
-//  [ 1,  2,  3,  4],
-//  [ 5,  6,  7,  8],
-//  [ 9, 10, 11, 12],
-//  [13, 14, 15, 16],
-//  [17, 18, 19, 20]
-//]
+$arrayUtils = ArrayUtils::from(["orange", "banana", "apple", "raspberry", "kiwi"]);
 
-ArrayUtils::from(range(1, 20))->chunk(4, true);
-//[
-//  [ 0 =>  1,  1 =>  2,  2 =>  3,  3 =>  4],
-//  [ 4 =>  5,  5 =>  6,  6 =>  7,  7 =>  8],
-//  [ 8 =>  9,  9 => 10, 10 => 11, 11 => 12],
-//  [12 => 13, 13 => 14, 14 => 15, 15 => 16],
-//  [16 => 17, 17 => 18, 18 => 19, 19 => 20]
-//]
+
+$arrayUtils->sort();
+// expected output: ["apple", "banana", "kiwi", "orange", "raspberry"]
+
+$arrayUtils->sort(function($a, $b){ return strcmp($a, $b) * -1; })
+// expected output: ["raspberry", "orange", "kiwi", "banana", "apple"]
 ```
 {% endcode %}
 
@@ -37,14 +29,18 @@ $arrayUtils->sort(?callable $callback = null) : ArrayUtils;
 
 ### Parameter
 
-* `$size`
-  * The size of each chunk
-* `$preserveKeys` ![](../.gitbook/assets/badge_optional.svg) 
-  * When set to **`TRUE`** keys will be preserved. Default is **`FALSE`** which will reindex the chunk numerically
+* `$callback` ![](../.gitbook/assets/badge_optional.svg) 
+
+  > A function to compare element for sort, taking two arguments:
+  >
+  > * `$a` The comparison target A
+  > * `$b` The comparison target B
+  >
+  > Default is `NULL`, If is null, Sort by default sort function.
 
 ### Return value
 
-* Returns a multidimensional numerically indexed array, starting with zero, with each dimension containing `size` elements.
+* A sorted array.
 
 ## Polymorphism
 
@@ -62,5 +58,11 @@ ArrayUtils::sortFromAs(iterable $from, ?callable $callback = null) : array;
 
 ## References
 
-[https://www.php.net/manual/en/function.array-chunk](https://www.php.net/manual/en/function.array-chunk)
+{% embed url="https://www.php.net/manual/en/function.sort.php" %}
+
+{% embed url="https://www.php.net/manual/en/function.usort.php" %}
+
+{% embed url="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global\_Objects/Array/sort" %}
+
+
 

@@ -6,6 +6,8 @@ description: >-
 
 # ArrayUtils-&gt;diff\(\)
 
+
+
 {% code title="Example.php" %}
 ```php
 <?php use kim\present\utils\arrays\ArrayUtils;

@@ -60,7 +60,7 @@
 * [ArrayUtils-&gt;keylLast\(\)](methods/key-last.md)
 * [ArrayUtils-&gt;pop\(\)](methods/pop.md)
 * [ArrayUtils-&gt;random\(\)](methods/random.md)
-* [ArrayUtils-&gt;keylRandom\(\)](methods/key-random.md)
+* [ArrayUtils-&gt;keyRandom\(\)](methods/key-random.md)
 * [ArrayUtils-&gt;reduce\(\)](methods/reduce.md)
 * [ArrayUtils-&gt;reduceRight\(\)](methods/reduce-right.md)
 * [ArrayUtils-&gt;search\(\)](methods/search.md)

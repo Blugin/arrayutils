@@ -1,63 +1,54 @@
 ---
-description: The chunk() method split an array into chunks
+description: >-
+  The indexOf() method get first index at which a given element can be found in
+  the array
 ---
 
 # ArrayUtils-&gt;indexOf\(\)
 
 {% code title="Example.php" %}
 ```php
-<?php
-use kim\present\utils\arrays\ArrayUtils;
+<?php use kim\present\utils\arrays\ArrayUtils;
 
-ArrayUtils::from(range(1, 20))->chunk(4);
-//[
-//  [ 1,  2,  3,  4],
-//  [ 5,  6,  7,  8],
-//  [ 9, 10, 11, 12],
-//  [13, 14, 15, 16],
-//  [17, 18, 19, 20]
-//]
+$arrayUtils = ArrayUtils::from(["Apple", "Banana", "Carrot"]);
 
-ArrayUtils::from(range(1, 20))->chunk(4, true);
-//[
-//  [ 0 =>  1,  1 =>  2,  2 =>  3,  3 =>  4],
-//  [ 4 =>  5,  5 =>  6,  6 =>  7,  7 =>  8],
-//  [ 8 =>  9,  9 => 10, 10 => 11, 11 => 12],
-//  [12 => 13, 13 => 14, 14 => 15, 15 => 16],
-//  [16 => 17, 17 => 18, 18 => 19, 19 => 20]
-//]
+//Check array includes "Banana"
+$arrayUtils->indexOf("Banana");
+// expected output: 1
+
+//Check array includes "Carrot" from 2
+$arrayUtils->indexOf("Banana");
+// expected output: null
+
+//Check array includes "Baccon"
+$arrayUtils->indexOf("Baccon");
+// expected output: null
 ```
 {% endcode %}
 
 ## Syntax
 
 ```php
-$arrayUtils->chunk(int $size, bool $preserveKeys = false) : ArrayUtils;
+$arrayUtils->indexOf(mixed $needle, int $start = 0) : int|string|null;
 ```
 
 ### Parameter
 
-* `$size`
-  * The size of each chunk
-* `$preserveKeys` ![](../.gitbook/assets/badge_optional.svg) 
-  * When set to **`TRUE`** keys will be preserved. Default is **`FALSE`** which will reindex the chunk numerically
+* `$needle`
+  * The value to search for.
+* `$start` ![](../.gitbook/assets/badge_optional.svg) 
+
+  *  The position in this array at which to begin searching for `valueToFind`.
+  *  Defaults to `0`.
 
 ### Return value
 
-* Returns a multidimensional numerically indexed array, starting with zero, with each dimension containing `size` elements.
+* The  first index of the element in the array. If not founded, returns `NULL`.
 
 ## Polymorphism
 
 ```php
-$arrayUtils->chunkAs(int $size, bool $preserveKeys = false) : array;
-```
-
-```php
-ArrayUtils::chunkFrom(iterable $from, int $size, bool $preserveKeys = false) : ArrayUtils;
-```
-
-```php
-ArrayUtils::chunkFromAs(iterable $from, int $size, bool $preserveKeys = false) : array;
+ArrayUtils::indexOfFrom(iterable $from, mixed $needle, int $start = 0) : int|string|null;
 ```
 
 ## References

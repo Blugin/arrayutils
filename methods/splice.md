@@ -1,31 +1,30 @@
 ---
-description: The splice() method split an array into chunks
+description: >-
+  The splice() method remove a portion of the array and replace it with
+  something else
 ---
 
 # ArrayUtils-&gt;splice\(\)
 
 {% code title="Example.php" %}
 ```php
-<?php
-use kim\present\utils\arrays\ArrayUtils;
+<?php use kim\present\utils\arrays\ArrayUtils;
 
-ArrayUtils::from(range(1, 20))->chunk(4);
-//[
-//  [ 1,  2,  3,  4],
-//  [ 5,  6,  7,  8],
-//  [ 9, 10, 11, 12],
-//  [13, 14, 15, 16],
-//  [17, 18, 19, 20]
-//]
+$arrayUtils = ArrayUtils::from(range(1, 10));
 
-ArrayUtils::from(range(1, 20))->chunk(4, true);
-//[
-//  [ 0 =>  1,  1 =>  2,  2 =>  3,  3 =>  4],
-//  [ 4 =>  5,  5 =>  6,  6 =>  7,  7 =>  8],
-//  [ 8 =>  9,  9 => 10, 10 => 11, 11 => 12],
-//  [12 => 13, 13 => 14, 14 => 15, 15 => 16],
-//  [16 => 17, 17 => 18, 18 => 19, 19 => 20]
-//]
+$arrayUtils->splice(2);
+// expected output: [3, 4, 5, 6, 7, 8, 9, 10]
+$arrayUtils;
+// expected output: [1, 2]
+
+
+//Reset
+$arrayUtils = ArrayUtils::from(range(1, 10));
+
+$arrayUtils->splice(2, 4, "Hi", "Bye", "Oh");
+// expected output: [3, 4, 5, 6]
+$arrayUtils->splice(-4);
+// expected output: [1, 2, "Hi", "Bye", "Oh", 7, 8, 9]
 ```
 {% endcode %}
 
@@ -37,14 +36,24 @@ $arrayUtils->splice(int $offset, ?int $length = null, mixed ...$replacement) : A
 
 ### Parameter
 
-* `$size`
-  * The size of each chunk
-* `$preserveKeys` ![](../.gitbook/assets/badge_optional.svg) 
-  * When set to **`TRUE`** keys will be preserved. Default is **`FALSE`** which will reindex the chunk numerically
+* `$offset`
+
+  > The index at which to start changing the array.
+
+* `$length`![](../.gitbook/assets/badge_optional.svg) 
+
+  > Length of array to be removed
+  >
+  > Default is `NULL`. If is null, It replaced to `count($array)-$offest`.
+
+* `$replacement`![](../.gitbook/assets/badge_optional.svg) 
+
+  > Values to replace.  
+  > If if empty, Removes elements in the selected range.
 
 ### Return value
 
-* Returns a multidimensional numerically indexed array, starting with zero, with each dimension containing `size` elements.
+* The array consisting of the extracted elements.
 
 ## Polymorphism
 
@@ -62,5 +71,9 @@ ArrayUtils::spliceFromAs(iterable $from, int $offset, ?int $length = null, mixed
 
 ## References
 
-[https://www.php.net/manual/en/function.array-chunk](https://www.php.net/manual/en/function.array-chunk)
+{% embed url="https://www.php.net/manual/en/function.array-splice.php" %}
+
+{% embed url="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global\_Objects/Array/splice" %}
+
+
 

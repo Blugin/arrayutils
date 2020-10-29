@@ -1,5 +1,5 @@
 ---
-description: The unique() method split an array into chunks
+description: The unique() method removes duplicate values
 ---
 
 # ArrayUtils-&gt;unique\(\)
@@ -9,23 +9,10 @@ description: The unique() method split an array into chunks
 <?php
 use kim\present\utils\arrays\ArrayUtils;
 
-ArrayUtils::from(range(1, 20))->chunk(4);
-//[
-//  [ 1,  2,  3,  4],
-//  [ 5,  6,  7,  8],
-//  [ 9, 10, 11, 12],
-//  [13, 14, 15, 16],
-//  [17, 18, 19, 20]
-//]
+$arrayUtils = ArrayUtils::from(["a", "a", "a", "b", "c", "c", "d"]);
 
-ArrayUtils::from(range(1, 20))->chunk(4, true);
-//[
-//  [ 0 =>  1,  1 =>  2,  2 =>  3,  3 =>  4],
-//  [ 4 =>  5,  5 =>  6,  6 =>  7,  7 =>  8],
-//  [ 8 =>  9,  9 => 10, 10 => 11, 11 => 12],
-//  [12 => 13, 13 => 14, 14 => 15, 15 => 16],
-//  [16 => 17, 17 => 18, 18 => 19, 19 => 20]
-//]
+$arrayUtils->unique();
+// expected output: ["a", "b", "c", "d"]
 ```
 {% endcode %}
 
@@ -37,14 +24,22 @@ $arrayUtils->unique(int $sort_flags = SORT_STRING) : ArrayUtils;
 
 ### Parameter
 
-* `$size`
-  * The size of each chunk
-* `$preserveKeys` ![](../.gitbook/assets/badge_optional.svg) 
-  * When set to **`TRUE`** keys will be preserved. Default is **`FALSE`** which will reindex the chunk numerically
+* `$sortFlags` ![](../.gitbook/assets/badge_optional.svg) 
+
+  > Used to modify the sorting behavior using these values:
+  >
+  >
+  >
+  > Sorting type flags:
+  >
+  > * **`SORT_REGULAR`** - compare items normally \(don't change types\)
+  > * **`SORT_NUMERIC`** - compare items numerically
+  > * **`SORT_STRING`** - compare items as strings
+  > * **`SORT_LOCALE_STRING`** - compare items as strings, based on the current locale.
 
 ### Return value
 
-* Returns a multidimensional numerically indexed array, starting with zero, with each dimension containing `size` elements.
+* A filtered array.
 
 ## Polymorphism
 
@@ -62,5 +57,7 @@ ArrayUtils::uniqueFromAs(iterable $from, int $sort_flags = SORT_STRING) : array;
 
 ## References
 
-[https://www.php.net/manual/en/function.array-chunk](https://www.php.net/manual/en/function.array-chunk)
+{% embed url="https://www.php.net/manual/en/function.array-chunk" %}
+
+
 

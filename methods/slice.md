@@ -1,31 +1,18 @@
 ---
-description: The slice() method split an array into chunks
+description: The slice() method returns an array with selected from start to end
 ---
 
 # ArrayUtils-&gt;slice\(\)
 
 {% code title="Example.php" %}
 ```php
-<?php
-use kim\present\utils\arrays\ArrayUtils;
+<?php use kim\present\utils\arrays\ArrayUtils;
 
-ArrayUtils::from(range(1, 20))->chunk(4);
-//[
-//  [ 1,  2,  3,  4],
-//  [ 5,  6,  7,  8],
-//  [ 9, 10, 11, 12],
-//  [13, 14, 15, 16],
-//  [17, 18, 19, 20]
-//]
+$arrayUtils = ArrayUtils::from(range(1, 10));
 
-ArrayUtils::from(range(1, 20))->chunk(4, true);
-//[
-//  [ 0 =>  1,  1 =>  2,  2 =>  3,  3 =>  4],
-//  [ 4 =>  5,  5 =>  6,  6 =>  7,  7 =>  8],
-//  [ 8 =>  9,  9 => 10, 10 => 11, 11 => 12],
-//  [12 => 13, 13 => 14, 14 => 15, 15 => 16],
-//  [16 => 17, 17 => 18, 18 => 19, 19 => 20]
-//]
+$arrayUtils->slice(2);    // expected output: [3, 4, 5, 6, 7, 8, 9, 10]
+$arrayUtils->slice(2, 4); // expected output: [3, 4]
+$arrayUtils->slice(-4);   // expected output: [7, 8, 9, 10]
 ```
 {% endcode %}
 
@@ -37,14 +24,24 @@ $arrayUtils->slice(int $start = 0, int $end = null, bool $preserve_keys = false)
 
 ### Parameter
 
-* `$size`
-  * The size of each chunk
+* `$start` ![](../.gitbook/assets/badge_optional.svg) 
+
+  > Zero-based index at which to start extraction.
+  >
+  > Default is `0`.
+
+* `$end` ![](../.gitbook/assets/badge_optional.svg) 
+
+  > Zero-based index at which to start extraction.
+  >
+  > Default is `count($array)`.
+
 * `$preserveKeys` ![](../.gitbook/assets/badge_optional.svg) 
-  * When set to **`TRUE`** keys will be preserved. Default is **`FALSE`** which will reindex the chunk numerically
+  * When set to **`TRUE`** keys will be preserved.  Default is **`FALSE`** which will re-index the chunk numerically
 
 ### Return value
 
-* Returns a multidimensional numerically indexed array, starting with zero, with each dimension containing `size` elements.
+* A sliced array.
 
 ## Polymorphism
 
@@ -62,5 +59,9 @@ ArrayUtils::sliceFromAs(iterable $from, int $start = 0, int $end = null, bool $p
 
 ## References
 
-[https://www.php.net/manual/en/function.array-chunk](https://www.php.net/manual/en/function.array-chunk)
+{% embed url="https://www.php.net/manual/en/function.array-slice.php" %}
+
+{% embed url="https://www.php.net/manual/en/function.array-chunk" %}
+
+
 
