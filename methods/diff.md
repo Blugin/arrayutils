@@ -1,31 +1,20 @@
 ---
-description: The diff() method split an array into chunks
+description: >-
+  The diff() method compares with other arrays and returns the values that are
+  not in any of the other arrays
 ---
 
 # ArrayUtils-&gt;diff\(\)
 
 {% code title="Example.php" %}
 ```php
-<?php
-use kim\present\utils\arrays\ArrayUtils;
+<?php use kim\present\utils\arrays\ArrayUtils;
 
-ArrayUtils::from(range(1, 20))->chunk(4);
-//[
-//  [ 1,  2,  3,  4],
-//  [ 5,  6,  7,  8],
-//  [ 9, 10, 11, 12],
-//  [13, 14, 15, 16],
-//  [17, 18, 19, 20]
-//]
+$arrayUtils = ArrayUtils::from(["first", "second", "third"]);
 
-ArrayUtils::from(range(1, 20))->chunk(4, true);
-//[
-//  [ 0 =>  1,  1 =>  2,  2 =>  3,  3 =>  4],
-//  [ 4 =>  5,  5 =>  6,  6 =>  7,  7 =>  8],
-//  [ 8 =>  9,  9 => 10, 10 => 11, 11 => 12],
-//  [12 => 13, 13 => 14, 14 => 15, 15 => 16],
-//  [16 => 17, 17 => 18, 18 => 19, 19 => 20]
-//]
+//General array comparison
+$arrayUtils->diff(["first", "4th"]);
+//["second", "third"]
 ```
 {% endcode %}
 
@@ -37,14 +26,13 @@ $arrayUtils->diff(iterable ...$iterables) : ArrayUtils;
 
 ### Parameter
 
-* `$size`
-  * The size of each chunk
-* `$preserveKeys` ![](../.gitbook/assets/badge_optional.svg) 
-  * When set to **`TRUE`** keys will be preserved. Default is **`FALSE`** which will reindex the chunk numerically
+* `$iterables`
+
+  > Arrays to compare.
 
 ### Return value
 
-* Returns a multidimensional numerically indexed array, starting with zero, with each dimension containing `size` elements.
+* A array containing all the entries that are not present in any of the other arrays. \(Keys are preserved\)
 
 ## Polymorphism
 
@@ -62,5 +50,7 @@ ArrayUtils::diffFromAs(iterable $from, iterable ...$iterables) : array;
 
 ## References
 
-[https://www.php.net/manual/en/function.array-chunk](https://www.php.net/manual/en/function.array-chunk)
+{% embed url="https://www.php.net/manual/en/function.array-diff" %}
+
+
 

@@ -1,5 +1,5 @@
 ---
-description: The chunk() method split an array into chunks
+description: The slice() method split an array into chunks
 ---
 
 # ArrayUtils-&gt;slice\(\)
@@ -32,7 +32,7 @@ ArrayUtils::from(range(1, 20))->chunk(4, true);
 ## Syntax
 
 ```php
-$arrayUtils->chunk(int $size, bool $preserveKeys = false) : ArrayUtils;
+$arrayUtils->slice(int $start = 0, int $end = null, bool $preserve_keys = false) : ArrayUtils;
 ```
 
 ### Parameter
@@ -49,15 +49,15 @@ $arrayUtils->chunk(int $size, bool $preserveKeys = false) : ArrayUtils;
 ## Polymorphism
 
 ```php
-$arrayUtils->chunkAs(int $size, bool $preserveKeys = false) : array;
+$arrayUtils->sliceAs(int $start = 0, int $end = null, bool $preserve_keys = false) : array;
 ```
 
 ```php
-ArrayUtils::chunkFrom(iterable $from, int $size, bool $preserveKeys = false) : ArrayUtils;
+ArrayUtils::sliceFrom(iterable $from, int $start = 0, int $end = null, bool $preserve_keys = false) : ArrayUtils;
 ```
 
 ```php
-ArrayUtils::chunkFromAs(iterable $from, int $size, bool $preserveKeys = false) : array;
+ArrayUtils::sliceFromAs(iterable $from, int $start = 0, int $end = null, bool $preserve_keys = false) : array;
 ```
 
 ## References

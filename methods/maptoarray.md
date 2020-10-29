@@ -6,8 +6,7 @@ description: The mapToArray() static method cast all elements of the iterable to
 
 {% code title="Example.php" %}
 ```php
-<?php
-use kim\present\utils\arrays\ArrayUtils;
+<?php use kim\present\utils\arrays\ArrayUtils;
 
 ArrayUtils::mapToArray([
     1,
@@ -35,7 +34,8 @@ ArrayUtils::mapToArray(iterable $iterables) : array
 ### Parameter
 
 * `$iterable`
-  * An iterable containing an iterable. It converted to an array.
+
+  > An iterable containing an iterable. It converted to an array.
 
 ### Return value
 
@@ -49,5 +49,7 @@ This method not have polymorphic element
 
 ## References
 
-[https://www.php.net/manual/en/language.types.iterable](https://www.php.net/manual/en/language.types.iterable)
+{% embed url="https://www.php.net/manual/en/language.types.iterable" %}
+
+
 

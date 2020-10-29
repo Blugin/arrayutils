@@ -1,5 +1,5 @@
 ---
-description: The chunk() method split an array into chunks
+description: The pad() method split an array into chunks
 ---
 
 # ArrayUtils-&gt;pad\(\)
@@ -32,14 +32,14 @@ ArrayUtils::from(range(1, 20))->chunk(4, true);
 ## Syntax
 
 ```php
-$arrayUtils->chunk(int $size, bool $preserveKeys = false) : ArrayUtils;
+$arrayUtils->pad(int $size, mixed $value) : ArrayUtils;
 ```
 
 ### Parameter
 
 * `$size`
   * The size of each chunk
-* `$preserveKeys` ![](../.gitbook/assets/badge_optional.svg) 
+* `$preserveKeys`  
   * When set to **`TRUE`** keys will be preserved. Default is **`FALSE`** which will reindex the chunk numerically
 
 ### Return value
@@ -49,15 +49,15 @@ $arrayUtils->chunk(int $size, bool $preserveKeys = false) : ArrayUtils;
 ## Polymorphism
 
 ```php
-$arrayUtils->chunkAs(int $size, bool $preserveKeys = false) : array;
+$arrayUtils->padAs(int $size, mixed $value) : array;
 ```
 
 ```php
-ArrayUtils::chunkFrom(iterable $from, int $size, bool $preserveKeys = false) : ArrayUtils;
+ArrayUtils::padFrom(iterable $from, int $size, mixed $value) : ArrayUtils;
 ```
 
 ```php
-ArrayUtils::chunkFromAs(iterable $from, int $size, bool $preserveKeys = false) : array;
+ArrayUtils::padFromAs(iterable $from, int $size, mixed $value) : array;
 ```
 
 ## References

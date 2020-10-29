@@ -1,8 +1,8 @@
 ---
-description: The intersectAssoc() method split an array into chunks
+description: The fillKeys() method split an array into chunks
 ---
 
-# ArrayUtils-&gt;intersectAssoc\(\)
+# ArrayUtils-&gt;fillKeys\(\)
 
 {% code title="Example.php" %}
 ```php
@@ -32,7 +32,7 @@ ArrayUtils::from(range(1, 20))->chunk(4, true);
 ## Syntax
 
 ```php
-$arrayUtils->intersectAssoc(iterable ...$iterables) : ArrayUtils;
+$arrayUtils->fillKeys(mixed $value) : ArrayUtils;
 ```
 
 ### Parameter
@@ -49,15 +49,15 @@ $arrayUtils->intersectAssoc(iterable ...$iterables) : ArrayUtils;
 ## Polymorphism
 
 ```php
-$arrayUtils->intersectAssocAs(iterable ...$iterables) : array;
+$arrayUtils->fillKeysAs(mixed $value) : array;
 ```
 
 ```php
-ArrayUtils::intersectAssocFrom(iterable $from, iterable ...$iterables) : ArrayUtils;
+ArrayUtils::fillKeysFrom(iterable $from, mixed $value) : ArrayUtils;
 ```
 
 ```php
-ArrayUtils::intersectAssocFromAs(iterable $from, iterable ...$iterables) : array;
+ArrayUtils::fillKeysFromAs(iterable $from, mixed $value) : array;
 ```
 
 ## References

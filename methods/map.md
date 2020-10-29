@@ -1,5 +1,5 @@
 ---
-description: The chunk() method split an array into chunks
+description: The map() method split an array into chunks
 ---
 
 # ArrayUtils-&gt;map\(\)
@@ -32,7 +32,7 @@ ArrayUtils::from(range(1, 20))->chunk(4, true);
 ## Syntax
 
 ```php
-$arrayUtils->chunk(int $size, bool $preserveKeys = false) : ArrayUtils;
+$arrayUtils->map(callable $callback) : ArrayUtils;
 ```
 
 ### Parameter
@@ -49,15 +49,15 @@ $arrayUtils->chunk(int $size, bool $preserveKeys = false) : ArrayUtils;
 ## Polymorphism
 
 ```php
-$arrayUtils->chunkAs(int $size, bool $preserveKeys = false) : array;
+$arrayUtils->mapAs(callable $callback) : array;
 ```
 
 ```php
-ArrayUtils::chunkFrom(iterable $from, int $size, bool $preserveKeys = false) : ArrayUtils;
+ArrayUtils::mapFrom(iterable $from, callable $callback) : ArrayUtils;
 ```
 
 ```php
-ArrayUtils::chunkFromAs(iterable $from, int $size, bool $preserveKeys = false) : array;
+ArrayUtils::mapFromAs(iterable $from, callable $callback) : array;
 ```
 
 ## References

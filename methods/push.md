@@ -1,5 +1,5 @@
 ---
-description: The chunk() method split an array into chunks
+description: The push() method split an array into chunks
 ---
 
 # ArrayUtils-&gt;push\(\)
@@ -32,7 +32,7 @@ ArrayUtils::from(range(1, 20))->chunk(4, true);
 ## Syntax
 
 ```php
-$arrayUtils->chunk(int $size, bool $preserveKeys = false) : ArrayUtils;
+$arrayUtils->push(mixed ...$values) : ArrayUtils;
 ```
 
 ### Parameter
@@ -49,15 +49,15 @@ $arrayUtils->chunk(int $size, bool $preserveKeys = false) : ArrayUtils;
 ## Polymorphism
 
 ```php
-$arrayUtils->chunkAs(int $size, bool $preserveKeys = false) : array;
+$arrayUtils->pushAs(mixed ...$values) : array;
 ```
 
 ```php
-ArrayUtils::chunkFrom(iterable $from, int $size, bool $preserveKeys = false) : ArrayUtils;
+ArrayUtils::pushFrom(iterable $from, mixed ...$values) : ArrayUtils;
 ```
 
 ```php
-ArrayUtils::chunkFromAs(iterable $from, int $size, bool $preserveKeys = false) : array;
+ArrayUtils::pushFromAs(iterable $from, mixed ...$values) : array;
 ```
 
 ## References

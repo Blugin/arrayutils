@@ -1,5 +1,5 @@
 ---
-description: The chunk() method split an array into chunks
+description: The forEach() method split an array into chunks
 ---
 
 # ArrayUtils-&gt;forEach\(\)
@@ -32,7 +32,7 @@ ArrayUtils::from(range(1, 20))->chunk(4, true);
 ## Syntax
 
 ```php
-$arrayUtils->chunk(int $size, bool $preserveKeys = false) : ArrayUtils;
+$arrayUtils->forEach(callable $callback) : ArrayUtils;
 ```
 
 ### Parameter
@@ -49,15 +49,15 @@ $arrayUtils->chunk(int $size, bool $preserveKeys = false) : ArrayUtils;
 ## Polymorphism
 
 ```php
-$arrayUtils->chunkAs(int $size, bool $preserveKeys = false) : array;
+$arrayUtils->forEachAs(callable $callback) : array;
 ```
 
 ```php
-ArrayUtils::chunkFrom(iterable $from, int $size, bool $preserveKeys = false) : ArrayUtils;
+ArrayUtils::forEachFrom(iterable $from, callable $callback) : ArrayUtils;
 ```
 
 ```php
-ArrayUtils::chunkFromAs(iterable $from, int $size, bool $preserveKeys = false) : array;
+ArrayUtils::forEachFromAs(iterable $from, callable $callback) : array;
 ```
 
 ## References

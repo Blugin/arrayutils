@@ -8,8 +8,7 @@ description: >-
 
 {% code title="Example.php" %}
 ```php
-<?php
-use kim\present\utils\arrays\ArrayUtils;
+<?php use kim\present\utils\arrays\ArrayUtils;
 
 var_export(ArrayUtils::from([3,6,9]));
 //ArrayUtils(array(3, 6, 9))
@@ -28,9 +27,15 @@ ArrayUtils::from(iterable $iterable, ?callable $mapFn = null) : ArrayUtils
 ### Parameter
 
 * `$iterable` 
-  * Iterable object to convert to an array.
+
+  > Iterable object to convert to an array.
+
 * `$mapFn`  ![](../.gitbook/assets/badge_optional.svg) 
-  * Map function to call on every element of the array.
+
+  > Map function to call on every element of the array.  
+  > Default is `NULL` . If is null, not execute map function.
+
+
 
 ### Return value
 

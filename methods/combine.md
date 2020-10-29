@@ -1,5 +1,7 @@
 ---
-description: The combine() method split an array into chunks
+description: >-
+  The combine() method returns new array by using one array for keys and another
+  for values
 ---
 
 # ArrayUtils-&gt;combine\(\)
@@ -9,58 +11,56 @@ description: The combine() method split an array into chunks
 <?php
 use kim\present\utils\arrays\ArrayUtils;
 
-ArrayUtils::from(range(1, 20))->chunk(4);
-//[
-//  [ 1,  2,  3,  4],
-//  [ 5,  6,  7,  8],
-//  [ 9, 10, 11, 12],
-//  [13, 14, 15, 16],
-//  [17, 18, 19, 20]
-//]
+$arrayUtils = ArrayUtils::from(["first", "second", "third"]);
 
-ArrayUtils::from(range(1, 20))->chunk(4, true);
-//[
-//  [ 0 =>  1,  1 =>  2,  2 =>  3,  3 =>  4],
-//  [ 4 =>  5,  5 =>  6,  6 =>  7,  7 =>  8],
-//  [ 8 =>  9,  9 => 10, 10 => 11, 11 => 12],
-//  [12 => 13, 13 => 14, 14 => 15, 15 => 16],
-//  [16 => 17, 17 => 18, 18 => 19, 19 => 20]
-//]
+//General usage
+$arrayUtils->combine([1, 2, 3]);
+//["first" => 1, "second" => 2, "third" => 3]
+
+//Combine itself
+$arrayUtils->combine();
+//["first" => "first", "second" => "second", "third" => "third"]
 ```
 {% endcode %}
 
 ## Syntax
 
 ```php
-$arrayUtils->combine(iterable|null $iterables = null) : ArrayUtils;
+$arrayUtils->combine(iterable|null $valueArray = null) : ArrayUtils;
 ```
 
 ### Parameter
 
-* `$size`
-  * The size of each chunk
-* `$preserveKeys` ![](../.gitbook/assets/badge_optional.svg) 
-  * When set to **`TRUE`** keys will be preserved. Default is **`FALSE`** which will reindex the chunk numerically
+* `$valueArray` ![](../.gitbook/assets/badge_optional.svg) 
+
+  > An array of elements to use as values.  
+  > Default is `NULL`. If is null, Use itself.
 
 ### Return value
 
-* Returns a multidimensional numerically indexed array, starting with zero, with each dimension containing `size` elements.
+*  A combined array.
+
+{% hint style="danger" %}
+If the number of elements for each array isn't equal, It will be throw error
+{% endhint %}
 
 ## Polymorphism
 
 ```php
-$arrayUtils->combineAs(iterable|null $iterables = null) : array;
+$arrayUtils->combineAs(iterable|null $valueArray = null) : array;
 ```
 
 ```php
-ArrayUtils::combineFrom(iterable $from, iterable|null $iterables = null) : ArrayUtils;
+ArrayUtils::combineFrom(iterable $from, iterable|null $valueArray = null) : ArrayUtils;
 ```
 
 ```php
-ArrayUtils::combineFromAs(iterable $from, iterable|null $iterables = null) : array;
+ArrayUtils::combineFromAs(iterable $from, iterable|null $valueArray = null) : array;
 ```
 
 ## References
 
-[https://www.php.net/manual/en/function.array-chunk](https://www.php.net/manual/en/function.array-chunk)
+{% embed url="https://www.php.net/manual/en/function.array-combine" %}
+
+
 

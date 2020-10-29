@@ -1,5 +1,5 @@
 ---
-description: The chunk() method split an array into chunks
+description: The reverse() method split an array into chunks
 ---
 
 # ArrayUtils-&gt;reverse\(\)
@@ -32,7 +32,7 @@ ArrayUtils::from(range(1, 20))->chunk(4, true);
 ## Syntax
 
 ```php
-$arrayUtils->chunk(int $size, bool $preserveKeys = false) : ArrayUtils;
+$arrayUtils->reverse(bool $preserveKeys = false) : ArrayUtils;
 ```
 
 ### Parameter
@@ -49,15 +49,15 @@ $arrayUtils->chunk(int $size, bool $preserveKeys = false) : ArrayUtils;
 ## Polymorphism
 
 ```php
-$arrayUtils->chunkAs(int $size, bool $preserveKeys = false) : array;
+$arrayUtils->reverseAs(bool $preserveKeys = false) : array;
 ```
 
 ```php
-ArrayUtils::chunkFrom(iterable $from, int $size, bool $preserveKeys = false) : ArrayUtils;
+ArrayUtils::reverseFrom(iterable $from, bool $preserveKeys = false) : ArrayUtils;
 ```
 
 ```php
-ArrayUtils::chunkFromAs(iterable $from, int $size, bool $preserveKeys = false) : array;
+ArrayUtils::reverseFromAs(iterable $from, bool $preserveKeys = false) : array;
 ```
 
 ## References

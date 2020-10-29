@@ -6,10 +6,11 @@ description: The chunk() method split an array into chunks
 
 {% code title="Example.php" %}
 ```php
-<?php
-use kim\present\utils\arrays\ArrayUtils;
+<?php use kim\present\utils\arrays\ArrayUtils;
 
-ArrayUtils::from(range(1, 20))->chunk(4);
+$arrayUtils = ArrayUtils::from(range(1, 20));
+
+$arrayUtils->chunk(4);
 //[
 //  [ 1,  2,  3,  4],
 //  [ 5,  6,  7,  8],
@@ -18,7 +19,7 @@ ArrayUtils::from(range(1, 20))->chunk(4);
 //  [17, 18, 19, 20]
 //]
 
-ArrayUtils::from(range(1, 20))->chunk(4, true);
+$arrayUtils->chunk(4, true);
 //[
 //  [ 0 =>  1,  1 =>  2,  2 =>  3,  3 =>  4],
 //  [ 4 =>  5,  5 =>  6,  6 =>  7,  7 =>  8],
@@ -32,35 +33,41 @@ ArrayUtils::from(range(1, 20))->chunk(4, true);
 ## Syntax
 
 ```php
-$arrayUtils->chunk(int $size, bool $preserveKeys = false) : ArrayUtils;
+$arrayUtils->chunk(int $size, bool $preserveKeys = FALSE) : ArrayUtils;
 ```
 
 ### Parameter
 
 * `$size`
-  * The size of each chunk
-* `$preserveKeys` ![](../.gitbook/assets/badge_optional.svg) 
-  * When set to **`TRUE`** keys will be preserved. Default is **`FALSE`** which will reindex the chunk numerically
+
+  > The size of each chunk
+
+* `$preserveKeys`  ![](../.gitbook/assets/badge_optional.svg) 
+
+  > When set to **`TRUE`** keys will be preserved.   
+  > Default is **`FALSE`** which will re-index the chunk numerically
 
 ### Return value
 
-* Returns a multidimensional numerically indexed array, starting with zero, with each dimension containing `size` elements.
+* A multidimensional numerically indexed array, starting with zero, with each dimension containing `size` elements.
 
 ## Polymorphism
 
 ```php
-$arrayUtils->chunkAs(int $size, bool $preserveKeys = false) : array;
+$arrayUtils->chunkAs(int $size, bool $preserveKeys = FALSE) : array;
 ```
 
 ```php
-ArrayUtils::chunkFrom(iterable $from, int $size, bool $preserveKeys = false) : ArrayUtils;
+ArrayUtils::chunkFrom(iterable $from, int $size, bool $preserveKeys = FALSE) : ArrayUtils;
 ```
 
 ```php
-ArrayUtils::chunkFromAs(iterable $from, int $size, bool $preserveKeys = false) : array;
+ArrayUtils::chunkFromAs(iterable $from, int $size, bool $preserveKeys = FALSE) : array;
 ```
 
 ## References
 
-[https://www.php.net/manual/en/function.array-chunk](https://www.php.net/manual/en/function.array-chunk)
+{% embed url="https://www.php.net/manual/en/function.array-chunk" %}
+
+
 

@@ -1,5 +1,5 @@
 ---
-description: The chunk() method split an array into chunks
+description: The find() method split an array into chunks
 ---
 
 # ArrayUtils-&gt;find\(\)
@@ -32,7 +32,7 @@ ArrayUtils::from(range(1, 20))->chunk(4, true);
 ## Syntax
 
 ```php
-$arrayUtils->chunk(int $size, bool $preserveKeys = false) : ArrayUtils;
+$arrayUtils->find(callable $callback) : mixed;
 ```
 
 ### Parameter
@@ -49,15 +49,7 @@ $arrayUtils->chunk(int $size, bool $preserveKeys = false) : ArrayUtils;
 ## Polymorphism
 
 ```php
-$arrayUtils->chunkAs(int $size, bool $preserveKeys = false) : array;
-```
-
-```php
-ArrayUtils::chunkFrom(iterable $from, int $size, bool $preserveKeys = false) : ArrayUtils;
-```
-
-```php
-ArrayUtils::chunkFromAs(iterable $from, int $size, bool $preserveKeys = false) : array;
+ArrayUtils::findFrom(iterable $from, callable $callback) : mixed;
 ```
 
 ## References

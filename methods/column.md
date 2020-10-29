@@ -1,5 +1,5 @@
 ---
-description: The column() method split an array into chunks
+description: The column() method returns the values from a single column in the input array
 ---
 
 # ArrayUtils-&gt;column\(\)
@@ -9,22 +9,30 @@ description: The column() method split an array into chunks
 <?php
 use kim\present\utils\arrays\ArrayUtils;
 
-ArrayUtils::from(range(1, 20))->chunk(4);
-//[
-//  [ 1,  2,  3,  4],
-//  [ 5,  6,  7,  8],
-//  [ 9, 10, 11, 12],
-//  [13, 14, 15, 16],
-//  [17, 18, 19, 20]
-//]
+$arrayUtils = ArrayUtils::from([
+    ["any" => "first",  1, 2, 3],
+    ["any" => "second", 4, 5, 6],
+    ["any" => "third",  7, 8, 9]
+]);
 
-ArrayUtils::from(range(1, 20))->chunk(4, true);
+// Use "any" value in internal array as value of array
+$arrayUtils->column("any");
+//["first", "second", "third"]
+
+
+// Use 2nd value in internal array as value,
+// Use "any" in internal array as key of array
+$arrayUtils->column(1, "any");
+//["first" => 2, "second" => 5, "third" => 8]
+
+
+// Use value in internal array as value,
+// Use "any" in internal array as key of array
+$arrayUtils->column(null, "any");
 //[
-//  [ 0 =>  1,  1 =>  2,  2 =>  3,  3 =>  4],
-//  [ 4 =>  5,  5 =>  6,  6 =>  7,  7 =>  8],
-//  [ 8 =>  9,  9 => 10, 10 => 11, 11 => 12],
-//  [12 => 13, 13 => 14, 14 => 15, 15 => 16],
-//  [16 => 17, 17 => 18, 18 => 19, 19 => 20]
+//  "first"  => ["any" => "first",  1, 2, 3],
+//  "second" => ["any" => "second", 4, 5, 6],
+//  "third"  => ["any" => "third",  7, 8, 9]
 //]
 ```
 {% endcode %}
@@ -32,35 +40,43 @@ ArrayUtils::from(range(1, 20))->chunk(4, true);
 ## Syntax
 
 ```php
-$arrayUtils->column(mixed $column_key, mixed $indexKey = null) : ArrayUtils;
+$arrayUtils->column(mixed $valueKey, mixed $indexKey = null) : ArrayUtils;
 ```
 
 ### Parameter
 
-* `$size`
-  * The size of each chunk
-* `$preserveKeys` ![](../.gitbook/assets/badge_optional.svg) 
-  * When set to **`TRUE`** keys will be preserved. Default is **`FALSE`** which will reindex the chunk numerically
+* `$valueKey`
+
+  > The key value of the element to be used as the value.
+  >
+  > If is null, Use element to value.
+
+* `$indexKey` ![](../.gitbook/assets/badge_optional.svg) 
+
+  > The key value of the element to be used as the key.  
+  > Default is `NULL`. If is null, Re-index from 0.
 
 ### Return value
 
-* Returns a multidimensional numerically indexed array, starting with zero, with each dimension containing `size` elements.
+* A array of values representing a single column from the input array.
 
 ## Polymorphism
 
 ```php
-$arrayUtils->columnAs(mixed $column_key, mixed $indexKey = null) : array;
+$arrayUtils->columnAs(mixed $valueKey, mixed $indexKey = null) : array;
 ```
 
 ```php
-ArrayUtils::columnFrom(iterable $from, mixed $column_key, mixed $indexKey = null) : ArrayUtils;
+ArrayUtils::columnFrom(iterable $from, mixed $valueKey, mixed $indexKey = null) : ArrayUtils;
 ```
 
 ```php
-ArrayUtils::(iterable $from, mixed $column_key, mixed $indexKey = null) : array;
+ArrayUtils::(iterable $from, mixed $valueKey, mixed $indexKey = null) : array;
 ```
 
 ## References
 
-[https://www.php.net/manual/en/function.array-chunk](https://www.php.net/manual/en/function.array-chunk)
+{% embed url="https://www.php.net/manual/en/function.array-column" %}
+
+
 

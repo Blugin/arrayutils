@@ -8,8 +8,7 @@ description: >-
 
 {% code title="Example.php" %}
 ```php
-<?php
-use kim\present\utils\arrays\ArrayUtils;
+<?php use kim\present\utils\arrays\ArrayUtils;
 
 ArrayUtils::of(3,6,9);
 //ArrayUtils(array(3, 6, 9))
@@ -25,7 +24,8 @@ ArrayUtils::of(mixed ...$elements) : ArrayUtils
 ### Parameter
 
 * `...$elements` 
-  * Elements used to create the array.
+
+  > Elements used to create the array.
 
 ### Return value
 

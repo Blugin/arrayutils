@@ -1,5 +1,5 @@
 ---
-description: The chunk() method split an array into chunks
+description: The mergeSoft() method split an array into chunks
 ---
 
 # ArrayUtils-&gt;mergeSoft\(\)
@@ -32,7 +32,7 @@ ArrayUtils::from(range(1, 20))->chunk(4, true);
 ## Syntax
 
 ```php
-$arrayUtils->chunk(int $size, bool $preserveKeys = false) : ArrayUtils;
+$arrayUtils->mergeSoft(mixed ...$iterables) : ArrayUtils;
 ```
 
 ### Parameter
@@ -49,15 +49,15 @@ $arrayUtils->chunk(int $size, bool $preserveKeys = false) : ArrayUtils;
 ## Polymorphism
 
 ```php
-$arrayUtils->chunkAs(int $size, bool $preserveKeys = false) : array;
+$arrayUtils->mergeSoftAs(mixed ...$iterables) : array;
 ```
 
 ```php
-ArrayUtils::chunkFrom(iterable $from, int $size, bool $preserveKeys = false) : ArrayUtils;
+ArrayUtils::mergeSoftFrom(iterable $from, mixed ...$iterables) : ArrayUtils;
 ```
 
 ```php
-ArrayUtils::chunkFromAs(iterable $from, int $size, bool $preserveKeys = false) : array;
+ArrayUtils::mergeSoftFromAs(iterable $from, mixed ...$iterables) : array;
 ```
 
 ## References

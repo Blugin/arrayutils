@@ -1,5 +1,5 @@
 ---
-description: The chunk() method split an array into chunks
+description: The unique() method split an array into chunks
 ---
 
 # ArrayUtils-&gt;unique\(\)
@@ -32,7 +32,7 @@ ArrayUtils::from(range(1, 20))->chunk(4, true);
 ## Syntax
 
 ```php
-$arrayUtils->chunk(int $size, bool $preserveKeys = false) : ArrayUtils;
+$arrayUtils->unique(int $sort_flags = SORT_STRING) : ArrayUtils;
 ```
 
 ### Parameter
@@ -49,15 +49,15 @@ $arrayUtils->chunk(int $size, bool $preserveKeys = false) : ArrayUtils;
 ## Polymorphism
 
 ```php
-$arrayUtils->chunkAs(int $size, bool $preserveKeys = false) : array;
+$arrayUtils->uniqueAs(int $sort_flags = SORT_STRING) : array;
 ```
 
 ```php
-ArrayUtils::chunkFrom(iterable $from, int $size, bool $preserveKeys = false) : ArrayUtils;
+ArrayUtils::uniqueFrom(iterable $from, int $sort_flags = SORT_STRING) : ArrayUtils;
 ```
 
 ```php
-ArrayUtils::chunkFromAs(iterable $from, int $size, bool $preserveKeys = false) : array;
+ArrayUtils::uniqueFromAs(iterable $from, int $sort_flags = SORT_STRING) : array;
 ```
 
 ## References
