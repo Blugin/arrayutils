@@ -1,8 +1,8 @@
 ---
-description: The keylLast() method returns last key
+description: The keyLast() method returns last key
 ---
 
-# ArrayUtils-&gt;keylLast\(\)
+# ArrayUtils-&gt;keyLast\(\)
 
 {% code title="Example.php" %}
 ```php
@@ -11,7 +11,7 @@ description: The keylLast() method returns last key
 $arrayUtils = ArrayUtils::from(["Apple" => 0, "Banana" => 1, "Carrot" => 2]);
 
 //Gets last key
-$arrayUtils->keylLast();
+$arrayUtils->keyLast();
 // expected output: "Carrot"
 ```
 {% endcode %}

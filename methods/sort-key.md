@@ -1,6 +1,6 @@
 ---
 description: >-
-  The sort() method sort an array by keys using a function or default sort
+  The sortKey() method sort an array by keys using a function or default sort
   function
 ---
 

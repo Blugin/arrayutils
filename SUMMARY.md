@@ -57,7 +57,7 @@
 * [ArrayUtils-&gt;keyFirst\(\)](methods/key-first.md)
 * [ArrayUtils-&gt;indexOf\(\)](methods/index-of.md)
 * [ArrayUtils-&gt;last\(\)](methods/last.md)
-* [ArrayUtils-&gt;keylLast\(\)](methods/key-last.md)
+* [ArrayUtils-&gt;keyLast\(\)](methods/key-last.md)
 * [ArrayUtils-&gt;pop\(\)](methods/pop.md)
 * [ArrayUtils-&gt;random\(\)](methods/random.md)
 * [ArrayUtils-&gt;keyRandom\(\)](methods/key-random.md)
