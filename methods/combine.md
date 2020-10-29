@@ -8,8 +8,7 @@ description: >-
 
 {% code title="Example.php" %}
 ```php
-<?php
-use kim\present\utils\arrays\ArrayUtils;
+<?php use kim\present\utils\arrays\ArrayUtils;
 
 $arrayUtils = ArrayUtils::from(["first", "second", "third"]);
 

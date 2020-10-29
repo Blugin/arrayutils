@@ -1,5 +1,7 @@
 ---
-description: 'The concat() method all similar to concat(), but not overwrite existing keys'
+description: >-
+  The concatSoft() method all similar to concat(), but not overwrite existing
+  keys
 ---
 
 # ArrayUtils-&gt;concatSoft\(\)

@@ -71,4 +71,5 @@
 
 * [Github repo](https://github.com/PresentKim/arrayutils)
 * [Poggit project](https://poggit.pmmp.io/ci/PresentKim/arrayutils/~)
+* [Packagist project](https://packagist.org/packages/presentkim/arrayutils)
 

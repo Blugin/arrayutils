@@ -6,8 +6,7 @@ description: The countValues() method counts all the values of an array
 
 {% code title="Example.php" %}
 ```php
-<?php
-use kim\present\utils\arrays\ArrayUtils;
+<?php use kim\present\utils\arrays\ArrayUtils;
 
 $arrayUtils = ArrayUtils::from(["a", "a", "a", "b", "c", "c", "d"]);
 
