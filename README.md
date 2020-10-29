@@ -36,12 +36,15 @@ PHP's array functions are painful for developers. \(like `array_map`, `array_fil
 
 Processing arrays through this library makes the code flow much clearer than pure PHP.
 
-Pure PHP's array functions, when nested, reverse the code and get deeper and deeper indentations like below.
+Pure PHP's array functions, when nested, reverse the code and get deeper and deeper indentations.
 
-{% code title="Pure PHP" %}
+ArrayUtils solves these problems and makes the code easier to figure out.
+
+Also, if you Using the `array-function` added in PHP 7.4, you can write more neatly.
+
+{% tabs %}
+{% tab title="Pure PHP" %}
 ```php
-<?php
-
 $playerFiles = scandir(Server::getInstance()->getDataPath() . "players/";
 $onlinePlayers = Server::getInstance()->getOnlinePlayers();
 
@@ -64,17 +67,11 @@ $playerNames = array_column(
     ), 1, 0
 );
 ```
-{% endcode %}
+{% endtab %}
 
-
-
-ArrayUtils solves these problems and makes the code easier to figure out.
-
-The code is sorted in the order in which the array is processed, the order of method names and arguments is also consistent like below.
-
-{% code title="with ArrayUtils" %}
+{% tab title="with ArrayUtils" %}
 ```php
-<?php use kim\present\utils\arrays\ArrayUtils;
+use kim\present\utils\arrays\ArrayUtils;
 
 $playerFiles = scandir(Server::getInstance()->getDataPath() . "players/");
 $onlinePlayers = Server::getInstance()->getOnlinePlayers();
@@ -85,15 +82,11 @@ $playerNames = ArrayUtils::filterFrom($playerFiles, function(string $fileName) :
     ->map(function(string $playerName) use($onlineNames) : string{ return $onlineNames[strtolower($playerName)] ?? $playerName; })
     ->mapAssocAs(function(string $playerName) : array{ return [strtolower($playerName), $playerName]; });
 ```
-{% endcode %}
+{% endtab %}
 
-
-
-Also, if you Using the `array-function` added in PHP 7.4, you can write more neatly.
-
-{% code title="PHP >= 7.4 with ArrayUtils" %}
+{% tab title="PHP >= 7.4 with ArrayUtils" %}
 ```php
-<?php use kim\present\utils\arrays\ArrayUtils;
+use kim\present\utils\arrays\ArrayUtils;
 
 $playerFiles = scandir(Server::getInstance()->getDataPath() . "players/");
 $onlinePlayers = Server::getInstance()->getOnlinePlayers();
@@ -104,5 +97,8 @@ $playerNames = ArrayUtils::filterFrom($playerFiles, fn(string $fileName) => subs
     ->map(fn(string $playerName) => $onlineNames[strtolower($playerName)] ?? $playerName)
     ->mapAssocAs(fn(string $playerName) => [strtolower($playerName), $playerName]);
 ```
-{% endcode %}
+{% endtab %}
+{% endtabs %}
+
+
 
