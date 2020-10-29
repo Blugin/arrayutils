@@ -6,7 +6,7 @@
 
 ## methods
 
-* [Main](methods/~.md)
+* [Main](methods/index.md)
 * [ArrayUtils::from\(\)](methods/from.md)
 * [ArrayUtils::of\(\)](methods/of.md)
 * [ArrayUtils::mapToArray\(\)](methods/maptoarray.md)
