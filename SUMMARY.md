@@ -63,7 +63,7 @@
     * [unique\(\)](methods/c/unique.md)
     * [unshift\(\)](methods/c/unshift.md)
     * [values\(\)](methods/c/values.md)
-* [📖Modifier Prefix](prefixs/README.md)
+* [📖Prefixs](prefixs/README.md)
   * [⚡ Prefix - From](prefixs/from.md)
   * [⚡ Prefix - As](prefixs/as.md)
 

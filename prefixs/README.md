@@ -1,4 +1,4 @@
-# 📖Modifier Prefix
+# 📖Prefixs
 
 {% hint style="info" %}
 ## Modifiers are divided into two

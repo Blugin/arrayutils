@@ -41,12 +41,6 @@ ArrayUtils::mapToArray(iterable $iterables) : array
 
 * A new array containing elements converted to an array.
 
-## Polymorphism
-
-{% hint style="warning" %}
-This method not have polymorphic element
-{% endhint %}
-
 ## References
 
 {% embed url="https://www.php.net/manual/en/language.types.iterable" %}
