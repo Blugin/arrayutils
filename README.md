@@ -24,7 +24,7 @@ Pure PHP's array functions, when nested, reverse the code and get deeper and dee
 
 ArrayUtils solves these problems and makes the code easier to figure out.
 
-Also, if you Using the `array-function` added in PHP 7.4, you can write more neatly.
+Also, if you Using the `arrow-function` added in PHP 7.4, you can write more neatly.
 
 {% tabs %}
 {% tab title="Pure PHP" %}
